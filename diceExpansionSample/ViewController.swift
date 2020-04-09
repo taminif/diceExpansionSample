@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     // タップ用イベント関数
-    func tapAction(_ gesture: UIGestureRecognizer) {
+    @objc func tapAction(_ gesture: UIGestureRecognizer) {
         if let tapGesture = gesture as? UITapGestureRecognizer {
             // タップが一回でなければ終了
             if tapGesture.numberOfTapsRequired != 1 {
@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
                 if isSuccess {
                     let alert = UIAlertController(title: "結果", message: "成功！", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "次のゲームへ", style:UIAlertActionStyle.default, handler:{(action:UIAlertAction) -> Void in
+                    let okAction = UIAlertAction(title: "次のゲームへ", style:UIAlertAction.Style.default, handler:{(action:UIAlertAction) -> Void in
                         return
                     })
                     alert.addAction(okAction)
@@ -129,7 +129,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                     present(alert, animated: true, completion: nil)
                 } else {
                     let alert = UIAlertController(title: "結果", message: "失敗", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "最初から", style:UIAlertActionStyle.default, handler:{(action:UIAlertAction) -> Void in
+                    let okAction = UIAlertAction(title: "最初から", style:UIAlertAction.Style.default, handler:{(action:UIAlertAction) -> Void in
                         return
                     })
                     alert.addAction(okAction)
